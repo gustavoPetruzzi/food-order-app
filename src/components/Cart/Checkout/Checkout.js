@@ -15,6 +15,7 @@ const Checkout = (props) => {
     city: true,
     postal: true
   });
+
   const confirmHandler = (event) => {
     event.preventDefault();
     const enteredName = nameInputRef.current.value;
@@ -41,7 +42,8 @@ const Checkout = (props) => {
       enteredCityIsValid && 
       enteredPostalIsValid;
 
-    if (!formIsValid) {
+
+    if (formIsValid) {
       props.onSubmit({
         name: enteredName,
         street: enteredStreet,
